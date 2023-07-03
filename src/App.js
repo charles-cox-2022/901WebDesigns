@@ -14,11 +14,11 @@ function App() {
       <header id="grid-main" class="grey">
         <div class="grid-top">
         </div>
-          <nav class="grid-nav center textwhite flex-column">
+          <nav class="grid-nav center textwhite flex-column"> 
             <h1>901 Web Designs</h1>
             <nav class="center">
               <a href="#">About Us</a>
-              <a href="#">Portfolio</a>
+              <a href="#">Portfolios</a>
               <a href="#">Services</a>
               <a href="#">Testimonials</a>
 
