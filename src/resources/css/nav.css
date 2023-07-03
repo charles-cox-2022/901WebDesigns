@@ -1,0 +1,12 @@
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 5px 0px 5px;
+    color: lightblue;
+}
+a + a::before {
+    content: "\00B7";
+    color: lightblue;
+    top: 14px;
+    padding-right: 15px;
+}
