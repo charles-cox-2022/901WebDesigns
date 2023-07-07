@@ -13,7 +13,10 @@ class AboutUs extends Component {
                         <a href="#">The Company</a>
                         <a href="#">The People</a>
                     </nav>
-                    <div id="aboutUsContent" className="margin15 center bisque max80 bubble">
+                    <div id="aboutUsContent" className="margin15 center grey max80 bubble flex-left flex-column">
+                        <p className="textwhite">
+                            We are a team of driven web developers who have experience in React, Redux, Express, Mongo DB and many others. 
+                        </p>
 
 
                     </div>
