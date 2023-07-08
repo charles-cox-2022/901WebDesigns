@@ -9,7 +9,7 @@ import './resources/css/nav.css'
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSetting, Change } from './modules/redux/redux';
-
+import {Provider} from 'react-redux';
 //Components
 import Profile from './modules/profile/profile'
 import Content from './modules/content/Content';

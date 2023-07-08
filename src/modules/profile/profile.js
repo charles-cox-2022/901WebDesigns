@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Login } from "./login";
 import { Settings } from "./settings";
 import { useState } from "react";
@@ -6,35 +6,19 @@ import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 const Profile = (props) => {
-    
-    const [user,setUser] = useState({
-        root:false,
-        loggedIn: false,
-        username: "",
-        token: "Empty",
-        settings: [
-            {
-                id: 0,
-                name: "",
-                options: "",
-                activeOption: ""
-            }
-        ],
-        
-    });
-    
-    
     const dispatch = useDispatch();
+    
+    let user = useSelector((state) => state.profile);
+    
 
-    let setting = useSelector((state) => state.setting.loggedIn);
     const display = () =>{
-    switch (setting) {
+    switch (user.isLoggedIn){
         case false:
+            console.log(user)
             return(<Login/>)
-            break;
         case true:
+            console.log(user)
             return(<Settings user={user.username}/>)
-            break;
         default:
             break;
     }
