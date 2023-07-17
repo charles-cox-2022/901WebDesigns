@@ -10,13 +10,12 @@ export const profileSlice = createSlice({
     name: 'Profile',
     initialState: defaultState,
     reducers: {
-        Login: (state, action) => {
+        userLogin: (state, action) => {
             state = action.payload;
             console.log('logged in as ' + action.payload.username);
-            console.log(state)
             return(state)
         },
-        Logout: (state, action) => {
+        userLogout: (state, action) => {
             state = defaultState;
             console.log('logged out');
             return(state)
@@ -24,7 +23,7 @@ export const profileSlice = createSlice({
     }
 })
 
-export const { Login,Logout } = profileSlice.actions;
+export const { userLogin,userLogout } = profileSlice.actions;
 export const selectProfileUsername = (state) => state.profile.username;
 export const selectProfileIsLoggedIn = (state) => state.profile.isLoggedIn;
 export const selectProfileIsAdmin = (state) => state.profile.isAdmin;

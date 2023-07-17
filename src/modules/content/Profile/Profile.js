@@ -5,21 +5,13 @@ import '../../../resources/css/mainGrid.css';
 import '../../../resources/css/flex.css';
 import '../../../resources/css/general.css';
 import '../../../resources/css/nav.css'
-const Portfolio = () => {
+import Rapi from "../../Rapi/rapi";
+const Profile = () => {
     
     
         const display = () => {
             return(
-                <div className="App-Content center flex-column flex-left max">
-                    <h2 className="center textwhite">Portfolio</h2>
-                    
-                    <div id="aboutUsContent" className="margin15 center grey max80 bubble flex-left flex-column">
-
-                        <p className="textwhite">
-                            Together we have created several web apps and are looking for more exciting projects! Here are some: 
-                        </p>
-                    </div>
-                </div>
+                <Rapi/>
             )
         }
             return(
@@ -54,4 +46,4 @@ const Portfolio = () => {
                 </div>
             )
 }
-export default Portfolio;
+export default Profile;

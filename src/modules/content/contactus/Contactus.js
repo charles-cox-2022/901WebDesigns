@@ -5,28 +5,12 @@ import '../../../resources/css/mainGrid.css';
 import '../../../resources/css/flex.css';
 import '../../../resources/css/general.css';
 import '../../../resources/css/nav.css'
-import { useSelector } from "react-redux";
-import GetProfile from "../../Rapi/Login/getProfile";
-
-
-import AsyncTest from "../../AsyncTesting/AsyncAwait";
-
-
-const AboutUs = (store) => {
-    AsyncTest().then((data) => console.log(data))
-    let profile = useSelector((state) => state.profile)
-    console.log(profile)
+import Calendly from "./Calendly";
+//Libraries
+const ContactUs = () => {
     const display = () => {
         return(
-            <div className="App-Content center flex-column flex-left max">
-                <h2 className="center textwhite">About Us</h2>
-                <div id="aboutUsContent" className="margin15 center grey max80 bubble flex-left flex-column">
-                    <p className="textwhite">
-                        We are a team of driven web developers who have experience in React, Redux, Express, Mongo DB and many others. 
-                        
-                    </p>
-                </div>
-            </div>
+            <Calendly/>
         )
     }
 
@@ -47,10 +31,10 @@ const AboutUs = (store) => {
                         </nav>
                     </div>
                     <img src={logo} className="App-logo grid-logo" alt="logo" />
-                    <div className="profile">
-                        {
-                            <h3 className="textwhite center">Welcome, {profile.username}</h3> 
-                        }
+                    <div id="g_id_onload"
+                        data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                        data-auto_select="true"
+                        data-login_uri="https://your.domain/your_login_endpoint">
                     </div>
                     
                     <div className="grid-left grey bubble">
@@ -68,6 +52,6 @@ const AboutUs = (store) => {
                 </header>
             </div>
         )
-    }
+}
 
-export default AboutUs;
+export default ContactUs

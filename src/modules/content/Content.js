@@ -1,42 +1,29 @@
-import React, {Component} from "react";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "../../App";
 import AboutUs from "./aboutus/Aboutus";
 import Portfolio from "./portfolio/Portfolio";
+import ContactUs from "./contactus/Contactus";
+import Profile from "./Profile/Profile";
+import { Provider } from "react-redux";
+import store from '../Rapi/Redux/store'
+import Player from "./YouTube/Player";
 
-class Content extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content: props.content
-        }
-    }
+const RouteSwitch = () => {
+    return(
+        <BrowserRouter>
+            <Provider store={store}>
+                <Routes>
+                    <Route path="/" element={<App store={store}/>}/>
+                    <Route path="/About" element={<AboutUs store={store}/>}/>
+                    <Route path="/Portfolio" element={<Portfolio store={store}/>}/>
+                    <Route path="/Contact" element={<ContactUs store={store}/>}/>
+                    <Route path="/Login" element={<Profile store={store}/>}/>
+                    <Route path="/Player" element={<Player store={store}/>}/>
+                </Routes>
+            </Provider>
+        </BrowserRouter>
+    )
 
-    UNSAFE_componentWillReceiveProps(props){
-        this.setState({content:props.content})
-    }
-
-    displayContent() {
-        console.log(`displaying ${this.state.content}`)
-        switch (this.state.content) {
-            case 0:
-                return(<AboutUs/>)
-                break;
-            case 1:
-                return(<Portfolio/>)
-                break;
-            default:
-
-                break;
-        }
-    }
-
-
-    render() {
-        return (
-            <React.Fragment>
-                {this.displayContent()}
-            </React.Fragment>
-        )
-    }
 }
-
-export default Content;
+export default RouteSwitch

@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import RouteSwitch from './modules/content/Content';
 import { Provider } from 'react-redux';
-import store from './modules/redux/store';
+import store from './modules/Rapi/Redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouteSwitch />
     </Provider>
   </React.StrictMode>
 );

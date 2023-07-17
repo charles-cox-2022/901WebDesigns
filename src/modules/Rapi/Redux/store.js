@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import  settingReducer from './redux'
-import profileReducer from './profile/profileSlice'
+import profileReducer from './profileSlice'
 
 export default configureStore({
   reducer: {
-    setting: settingReducer,
     profile: profileReducer
   },
 })
