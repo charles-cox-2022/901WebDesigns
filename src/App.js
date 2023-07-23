@@ -8,7 +8,7 @@ import './resources/css/nav.css'
 import Rapi from './modules/Rapi/rapi';
 import { Link } from 'react-router-dom';
 //Components
-
+import Nav from './modules/Nav/nav';
 //Other
 
 
@@ -17,16 +17,7 @@ function App() {
 return (
     <div className="App">
       <header id="grid-main" class="grey">
-          <div class="grid-nav center textwhite flex-column"> 
-            <h1>901 Web Designs</h1>
-              <nav class="center">
-                <Link className='navButton' to='/about'>About</Link>
-                <Link className='navButton' to='/contact'>Contact</Link>
-                <Link className='navButton' to='/portfolio'>Portfolio</Link>
-                <Link className='navButton' to='/testimonials'>Testimonials</Link>
-                <Link className='navButton' to='/services'>Services</Link>
-            </nav>
-          </div>
+          <Nav/>
           <img src={logo} className="App-logo grid-logo" alt="logo" />
 
         

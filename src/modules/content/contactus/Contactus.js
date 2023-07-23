@@ -27,7 +27,7 @@ const ContactUs = () => {
             )
         } else {
             return(
-            <h3 className="center">Welcome, {profile.username}</h3> 
+            <h3 className="padding25 center">Welcome, {profile.username}</h3> 
             )
         }
     

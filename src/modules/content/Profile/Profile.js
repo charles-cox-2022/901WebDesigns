@@ -8,6 +8,7 @@ import '../../../resources/css/nav.css'
 import Rapi from "../../Rapi/rapi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Nav from "../../Nav/nav";
 const Profile = () => {
     
     let profile = useSelector((state) => state.profile)
@@ -34,16 +35,7 @@ const Profile = () => {
             return(
                 <div className="App">
                     <header id="grid-main" className="grey">
-                        <div className="grid-nav center flex-column"> 
-                            <h1>901 Web Designs</h1>
-                            <nav className="center">
-                                <Link className='navButton' to='/about'>About</Link>
-                                <Link className='navButton' to='/contact'>Contact</Link>
-                                <Link className='navButton' to='/portfolio'>Portfolio</Link>
-                                <Link className='navButton' to='/testimonials'>Testimonials</Link>
-                                <Link className='navButton' to='/services'>Services</Link>
-                            </nav>
-                        </div>
+                        <Nav/>
                         <img src={logo} className="App-logo grid-logo" alt="logo" />
                         <div className="profile">
                             {
@@ -52,7 +44,7 @@ const Profile = () => {
                             }
                         </div>
                         
-                        <div className="grid-left grey bubble">
+                        <div className="grid-left bubble">
     
                         </div>
                         <div className="grid-content center flex-left flex-column">
@@ -61,7 +53,7 @@ const Profile = () => {
                             }
                         <p className='center padding25'>Designed by 901 Web Designs</p>
                         </div>
-                        <div class="grid-right grey bubble">
+                        <div class="grid-right bubble">
     
                         </div>
                     </header>

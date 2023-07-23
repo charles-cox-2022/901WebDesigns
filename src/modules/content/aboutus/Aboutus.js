@@ -38,7 +38,10 @@ const AboutUs = (store) => {
             )
         } else {
             return(
-            <h3 className="center">Welcome, {profile.username}</h3> 
+                <nav>
+                    <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                    <Link to='/Profile'>Profile</Link>
+                </nav>
             )
         }
     

@@ -21,11 +21,9 @@ const Services = () => {
                     
                     <div id="aboutUsContent" className="margin15 center grey max80 bubble flex-left flex-column">
 
-                        <p className="textwhite"></p>
-                        <div className="max flex-grid">
-                            <ServiceComponant serviceName="Static Web Site" img="http://localhost:3001/rapi/shanks" serviceDescription="A static web site is one that simply displays unchanging information."/>
-                            <ServiceComponant serviceName="Simple Web App" img="http://localhost:3001/rapi/shanks" serviceDescription="A simple web app is one that contains some functionality. For example, a list of reviews that is updated dynamically"/>
-                            <ServiceComponant serviceName="Complicated Web App" img="http://localhost:3001/rapi/shanks" serviceDescription="A fully customized web app, the sky is the limit!"/>
+                        <p className=""></p>
+                        <div className="flex-grid">
+                            <ServiceComponant serviceName="Web Design" img="http://localhost:3001/rapi/shanks" serviceDescription="Lets make your mark on the web!"/>
                         </div>
                     </div>
                 </div>
