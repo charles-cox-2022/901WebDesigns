@@ -64,9 +64,9 @@ useEffect(()=>{
    
 return (
     <React.Fragment>
-        <div className="App-Content textwhite flex-column margin15 padding25 center grey bubble" id="loginField">
+        <div className="App-Content flex-column margin15 padding25 center grey bubble" id="loginField">
             <h1 className="noExtras">Login</h1>
-            <div className="textwhite">
+            <div className="">
                 {statusMessage}
             </div>
             <div>

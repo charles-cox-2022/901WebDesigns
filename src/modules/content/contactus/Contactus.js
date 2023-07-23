@@ -6,41 +6,53 @@ import '../../../resources/css/flex.css';
 import '../../../resources/css/general.css';
 import '../../../resources/css/nav.css'
 import Calendly from "./Calendly";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Nav from "../../Nav/nav";
 //Libraries
 const ContactUs = () => {
+    let profile = useSelector((state) => state.profile)
     const display = () => {
         return(
             <Calendly/>
         )
     }
-
+    const profileDisplay = () => {
+            
+        if(profile.isLoggedIn == false){
+            return(
+                <nav className="center padding25">
+                <Link className='' to='/Login'>Login</Link>
+                </nav>
+            )
+        } else {
+            return(
+            <h3 className="center">Welcome, {profile.username}</h3> 
+            )
+        }
+    
+}
 
 
 
         return(
             <div className="App">
                 <header id="grid-main" className="grey">
-                    <div className="grid-nav center textwhite flex-column"> 
-                        <h1>901 Web Designs</h1>
-                        <nav className="center">
-                            <a className='navButton' href='/about'>About</a>
-                            <a className='navButton' href='/contact'>Contact</a>
-                            <a className='navButton' href='/portfolio'>Portfolio</a>
-                        <a href="#">Services</a>
-                        <a href="#">Testimonials</a>
-                        </nav>
-                    </div>
+                 <Nav/>
+                 
                     <img src={logo} className="App-logo grid-logo" alt="logo" />
-                    <div id="g_id_onload"
-                        data-client_id="YOUR_GOOGLE_CLIENT_ID"
-                        data-auto_select="true"
-                        data-login_uri="https://your.domain/your_login_endpoint">
+                    <div className="profile">
+                        {
+                           profileDisplay() 
+
+                        }
                     </div>
                     
                     <div className="grid-left grey bubble">
 
                     </div>
                     <div className="grid-content center flex-left flex-column">
+                    <p className="center textwhite siteHeader">Schedule a Meeting!</p>
                         {
                             display()
                         }

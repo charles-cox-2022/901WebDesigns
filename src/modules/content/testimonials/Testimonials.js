@@ -7,21 +7,23 @@ import '../../../resources/css/general.css';
 import '../../../resources/css/nav.css'
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useFetch from "react-fetch-hook";
 import Nav from "../../Nav/nav";
 
-const Portfolio = () => {
+const Testimonials = () => {
     let profile = useSelector((state) => state.profile)
     
         const display = () => {
             return(
                 <div className="App-Content center flex-column flex-left max">
-                    <p className="center siteHeader">Portfolio</p>
+                    <p className="padding25 center siteHeader">Testimonials</p>
                     
                     <div id="aboutUsContent" className="margin15 center grey max80 bubble flex-left flex-column">
 
                         <p className="">
-                            Together we have created several web apps and are looking for more exciting projects! Here are some: 
+                            We have helped quite a few people make their mark on the web... Here are a few:  
                         </p>
+                            
                     </div>
                 </div>
             )
@@ -69,4 +71,4 @@ const Portfolio = () => {
             </div>
             )
 }
-export default Portfolio;
+export default Testimonials;

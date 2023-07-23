@@ -7,7 +7,8 @@ import ContactUs from "./contactus/Contactus";
 import Profile from "./Profile/Profile";
 import { Provider } from "react-redux";
 import store from '../Rapi/Redux/store'
-import Player from "./YouTube/Player";
+import Services from "./services/Services";
+import Testimonials from "./testimonials/Testimonials";
 
 const RouteSwitch = () => {
     return(
@@ -19,7 +20,8 @@ const RouteSwitch = () => {
                     <Route path="/Portfolio" element={<Portfolio store={store}/>}/>
                     <Route path="/Contact" element={<ContactUs store={store}/>}/>
                     <Route path="/Login" element={<Profile store={store}/>}/>
-                    <Route path="/Player" element={<Player store={store}/>}/>
+                    <Route path="/Services" element={<Services store={store}/>}/>
+                    <Route path="/Testimonials" element={<Testimonials store={store}/>}/>
                 </Routes>
             </Provider>
         </BrowserRouter>

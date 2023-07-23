@@ -10,3 +10,8 @@
 .flex-left {
     justify-content: left;
 }
+.flex-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

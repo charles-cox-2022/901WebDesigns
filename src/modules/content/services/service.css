@@ -1,0 +1,20 @@
+.service {
+    max-height: 300px;
+    max-width: 400px;
+}
+.serviceImg {
+    height: 150px;
+    width: 150px;
+}
+.serviceBorder {
+    padding: 20px;
+    border: 0px solid bisque;
+    margin: 15px;
+}
+
+.serviceHeader {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 20px 10px 10px 0px;
+}

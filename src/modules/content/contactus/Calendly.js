@@ -16,12 +16,12 @@ class Calendly extends React.Component {
   
     render(){
       return (
-        <div>
-          <div id="schedule_form">
+        <div className="max">
+          <div id="schedule_form" className="max">
             <div 
               className="calendly-inline-widget"
               data-url="https://calendly.com/901webdesigns-charles-cox/30min"
-              style={{ minWidth: '320px', height: '580px' }} />
+              style={{ minWidth: '320px', height: '100%' }} />
           </div>
         </div>
       );

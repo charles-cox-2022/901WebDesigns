@@ -1,11 +1,17 @@
+html, body {
+    background-color: #282c34;
+    color: lightblue
+}
+
 .textwhite {
     color: white;
 }
+
 .profileIcon {
     width: 80%;
     height: 80%;
     border-radius: 50%;
-    
+    font-family: 'Courier New', Courier, monospace;
 }
 button {
     margin: 0px 5px 0px 5px;
@@ -24,6 +30,11 @@ button {
 .bubble {
     border-radius: 12px;
 }
+.button {
+    padding: 10px;
+    background-color: lightblue;
+    margin-top: 10px;
+}
 .max80 {
     width: 80%;
     height: 80%;
@@ -33,4 +44,16 @@ button {
 }
 .padding25 {
     padding: 25px;
+}
+.siteHeader{
+    font-size: 44px;
+    font-weight: 600;
+    color: lightblue;
+}
+h1 {
+    font-size: 52px;
+    color: lightblue;
+    font-weight: 800;
+    margin: 0px;
+    padding: 0px 0px 10px 0px;
 }
