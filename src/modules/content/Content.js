@@ -20,6 +20,7 @@ const RouteSwitch = () => {
                     <Route path="/Portfolio" element={<Portfolio store={store}/>}/>
                     <Route path="/Contact" element={<ContactUs store={store}/>}/>
                     <Route path="/Login" element={<Profile store={store}/>}/>
+                    <Route path="/Profile" element={<Profile store={store}/>}/>
                     <Route path="/Services" element={<Services store={store}/>}/>
                     <Route path="/Testimonials" element={<Testimonials store={store}/>}/>
                 </Routes>

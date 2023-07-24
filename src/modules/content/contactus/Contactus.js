@@ -9,6 +9,7 @@ import Calendly from "./Calendly";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Nav from "../../Nav/nav";
+import ProfileDropDown from "../../ProfileOptions/ProfileDropDown";
 //Libraries
 const ContactUs = () => {
     let profile = useSelector((state) => state.profile)
@@ -27,7 +28,10 @@ const ContactUs = () => {
             )
         } else {
             return(
-            <h3 className="padding25 center">Welcome, {profile.username}</h3> 
+                <div>
+                <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                <ProfileDropDown/>
+            </div>
             )
         }
     

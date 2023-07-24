@@ -8,6 +8,7 @@ import '../../../resources/css/nav.css'
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Nav from "../../Nav/nav";
+import ProfileDropDown from "../../ProfileOptions/ProfileDropDown";
 
 const Portfolio = () => {
     let profile = useSelector((state) => state.profile)
@@ -36,7 +37,10 @@ const Portfolio = () => {
                     )
                 } else {
                     return(
-                    <h3 className="padding25 center">Welcome, {profile.username}</h3> 
+                        <div>
+                        <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                        <ProfileDropDown/>
+                    </div>
                     )
                 }
             

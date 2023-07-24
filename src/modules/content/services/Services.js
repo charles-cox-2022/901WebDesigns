@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ServiceComponant from "./ServiceComponant";
 import Nav from "../../Nav/nav";
+import ProfileDropDown from "../../ProfileOptions/ProfileDropDown";
 
 const Services = () => {
     let profile = useSelector((state) => state.profile)
@@ -39,7 +40,10 @@ const Services = () => {
                     )
                 } else {
                     return(
-                    <h3 className="padding25 center">Welcome, {profile.username}</h3> 
+                    <div>
+                        <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                        <ProfileDropDown/>
+                    </div>
                     )
                 }
             

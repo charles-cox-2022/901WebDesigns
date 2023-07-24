@@ -1,0 +1,21 @@
+.profileDropDown {
+    margin: 0px;
+}
+.profileDropDownItems {
+    display: none;
+    position: absolute;
+    opacity: 1;
+    padding: 10px 25px 25px 10px;
+    margin: 0px;
+    justify-content: center;
+    align-items:start;
+    border-radius: 12px;
+}
+
+.profileDropDown:Hover + .profileDropDownItems {
+    display: flex;
+}
+
+.profileDropDownItems:hover {
+    display: flex;
+}

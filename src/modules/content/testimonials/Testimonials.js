@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useFetch from "react-fetch-hook";
 import Nav from "../../Nav/nav";
+import ProfileDropDown from "../../ProfileOptions/ProfileDropDown";
 
 const Testimonials = () => {
     let profile = useSelector((state) => state.profile)
@@ -38,7 +39,10 @@ const Testimonials = () => {
                     )
                 } else {
                     return(
-                    <h3 className="padding25 center">Welcome, {profile.username}</h3> 
+                        <div>
+                        <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                        <ProfileDropDown/>
+                    </div>
                     )
                 }
             

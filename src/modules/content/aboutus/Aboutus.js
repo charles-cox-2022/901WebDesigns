@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import GetProfile from "../../Rapi/Login/getProfile";
 import { Link } from "react-router-dom";
 import Nav from "../../Nav/nav";
+import ProfileDropDown from "../../ProfileOptions/ProfileDropDown";
 
 
 const AboutUs = (store) => {
@@ -38,10 +39,10 @@ const AboutUs = (store) => {
             )
         } else {
             return(
-                <nav>
+                <div>
                     <h3 className="padding25 center">Welcome, {profile.username}</h3>
-                    <Link to='/Profile'>Profile</Link>
-                </nav>
+                    <ProfileDropDown/>
+                </div>
             )
         }
     
