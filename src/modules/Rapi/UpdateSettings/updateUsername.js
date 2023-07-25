@@ -4,15 +4,24 @@ import {useState, useEffect} from "react";
 import useFetch from "react-fetch-hook";
 import { userLogin } from "../Redux/profileSlice";
 
-const Login = (props) => {
+const UpdateUsername = (props) => {
    //initialize dispatch
    const dispatch = useDispatch();
+
+
+
+
+
+
+
+
 
    //Start, user is not logged in
    const [isClicked, setIsClicked] = useState(false);
    const [statusMessage, setStatusMessage] = useState('');
    const [username, setUsername] = useState('');
-   const [password, setPassword] =  useState('');
+   const [newUsername, setNewUsername] = useState('');
+
    let local;
    //Are we Local or need to use Heroku?
    if(window.location.href.includes('localhost')){
@@ -21,11 +30,12 @@ const Login = (props) => {
        local = 'https://rokorium-wiki.herokuapp.com'
    }
 
-   const {isLoading, data} = useFetch(`${local}/rapi/login/`, {
+   const {isLoading, data} = useFetch(`${local}/rapi/updateUser/`, {
        method: "POST",
        body: JSON.stringify({
-           username: username,
-           password: password
+            action: 'updateUsername',
+            username: username,
+            newUsername: newUsername,
        }),
        credentials: 'include',
        headers: {
@@ -38,17 +48,19 @@ const Login = (props) => {
     isClicked && setIsClicked(false);
 },[isClicked]);
 
-//set status message for Login
+//set status message for Register
 useEffect(()=>{
+        
     //If Loading, set message to Loading
     if(isLoading){
         setStatusMessage('Loading...')
+        console.log('Loading')
     }
-    //if Data is valid and component is not loading
+
     if(data && !isLoading){
-        //if auth is true
-        if(data.auth === true){
-            //Log user in
+        if(data.status === true){
+            setStatusMessage(`Registered Successfully!`)
+            console.log('Registered Successfully')
             dispatch(userLogin({
                 id: data.id,
                 username: data.username,
@@ -56,45 +68,46 @@ useEffect(()=>{
                 isLoggedIn: true
             })
             )
+            props.setIsUpdating(false)
         } else {
-        console.log('Login Failed: '+ JSON.stringify(data))
-        setStatusMessage(`Invalid Username or Password`);
+        console.log('Registration Failed: '+ JSON.stringify(data))
+        setStatusMessage(`Error: ${data.result}`);
         }
     }
-},[data, isLoading,dispatch])
+},[data, isLoading])
+
    
 return (
     <React.Fragment>
-        <div className="App-Content flex-column margin15 padding25 center grey bubble" id="loginField">
-            <h1 className="noExtras">Login</h1>
-            <div className="">
-                {statusMessage}
-            </div>
+        <div className="App-Content textwhite flex-column margin15 padding25 center grey bubble" id="loginField">
+            <h1 className="noExtras">Register</h1>
+            <div className="textwhite">{statusMessage}</div>
             <div>
                 <label style={{fontSize:"21px"}} htmlFor="username">Username: </label>
                 <input type="text" id="RA-username" name="username"></input><br/>
             </div>
             <div>
-                <label style={{fontSize:"21px"}} htmlFor="Name">Password: </label>
-                <input type="password" id="RA-password" name="password"></input><br/>
+                <label style={{fontSize:"21px"}} htmlFor="Name">New Username: </label>
+                <input type="text" id="RA-password" name="password"></input><br/>
             </div>
             <div>
             <button className='button' onClick={ () => {
                 setUsername(document.getElementById("RA-username").value)
-                setPassword(document.getElementById("RA-password").value)
+                setNewUsername(document.getElementById("RA-password").value)
                 setIsClicked(true)
                 }}>
-                Login
+                Submit
+            </button>
+            <button className="button" onClick={ () => {
+                props.setIsUpdating(false);
+            }}>
+                Cancel
             </button>
             
-            <button className="button" onClick={ () => {
-                props.setIsRegistering(true)
-                setIsClicked(true)
-
-            }}>Register </button>
+            
             </div>
         </div>
-    </React.Fragment>
+                </React.Fragment>
 )
 }
-export default Login
+export default UpdateUsername
