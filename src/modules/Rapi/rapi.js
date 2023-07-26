@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import Login from "./Login/login";
 import Register from "./Register/Register";
 import './Resources/css/rapiGrid.css'
-
+import './Resources/css/rapi.css'
 const Rapi = () => {
     // Initialize
     let isLoggedIn = useSelector((state) => state.profile.isLoggedIn)

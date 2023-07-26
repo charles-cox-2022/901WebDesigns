@@ -15,3 +15,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.alignTop {
+    display: flex;
+    align-items: start;
+}

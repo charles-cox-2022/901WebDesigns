@@ -79,18 +79,15 @@ useEffect(()=>{
    
 return (
     <React.Fragment>
-        <div className="App-Content textwhite flex-column margin15 padding25 center grey bubble" id="loginField">
-            <h1 className="noExtras">Register</h1>
-            <div className="textwhite">{statusMessage}</div>
-            <div>
-                <label style={{fontSize:"21px"}} htmlFor="username">Username: </label>
-                <input type="text" id="RA-username" name="username"></input><br/>
-            </div>
-            <div>
+        <div id="updateUsername">
+        <div className="App-Content flex-column margin15 padding25 grey bubble">
+            <h3 className="noExtras alignTop">Update Username</h3>
+            <div className="alignTop">{statusMessage}</div>
+            <div className="alignTop">
                 <label style={{fontSize:"21px"}} htmlFor="Name">New Username: </label>
                 <input type="text" id="RA-password" name="password"></input><br/>
             </div>
-            <div>
+            <div className="alignTop">
             <button className='button' onClick={ () => {
                 setUsername(document.getElementById("RA-username").value)
                 setNewUsername(document.getElementById("RA-password").value)
@@ -98,14 +95,8 @@ return (
                 }}>
                 Submit
             </button>
-            <button className="button" onClick={ () => {
-                props.setIsUpdating(false);
-            }}>
-                Cancel
-            </button>
-            
-            
             </div>
+        </div>
         </div>
                 </React.Fragment>
 )
