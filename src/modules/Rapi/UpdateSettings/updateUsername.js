@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {useState, useEffect} from "react";
 import useFetch from "react-fetch-hook";
 import { userLogin } from "../Redux/profileSlice";
@@ -7,7 +7,7 @@ import { userLogin } from "../Redux/profileSlice";
 const UpdateUsername = (props) => {
    //initialize dispatch
    const dispatch = useDispatch();
-
+   let profile = useSelector((state) => state.profile)
 
 
 
@@ -19,7 +19,6 @@ const UpdateUsername = (props) => {
    //Start, user is not logged in
    const [isClicked, setIsClicked] = useState(false);
    const [statusMessage, setStatusMessage] = useState('');
-   const [username, setUsername] = useState('');
    const [newUsername, setNewUsername] = useState('');
 
    let local;
@@ -34,7 +33,7 @@ const UpdateUsername = (props) => {
        method: "POST",
        body: JSON.stringify({
             action: 'updateUsername',
-            username: username,
+            username: profile.username,
             newUsername: newUsername,
        }),
        credentials: 'include',
@@ -59,16 +58,16 @@ useEffect(()=>{
 
     if(data && !isLoading){
         if(data.status === true){
-            setStatusMessage(`Registered Successfully!`)
-            console.log('Registered Successfully')
+            setStatusMessage(`Updated Username Successfully!`)
+            console.log('Updated Username Successfully')
+            //User Login will update the current user information with the new data.
             dispatch(userLogin({
-                id: data.id,
-                username: data.username,
-                isAdmin: data.isAdmin,
+                id: data.account.id,
+                username: data.account.username,
+                isAdmin: data.account.isAdmin,
                 isLoggedIn: true
             })
             )
-            props.setIsUpdating(false)
         } else {
         console.log('Registration Failed: '+ JSON.stringify(data))
         setStatusMessage(`Error: ${data.result}`);
@@ -84,13 +83,12 @@ return (
             <h3 className="noExtras alignTop">Update Username</h3>
             <div className="alignTop">{statusMessage}</div>
             <div className="alignTop">
-                <label style={{fontSize:"21px"}} htmlFor="Name">New Username: </label>
-                <input type="text" id="RA-password" name="password"></input><br/>
+                <label style={{fontSize:"21px"}} htmlFor="updateUsername-NewUsername">New Username: </label>
+                <input type="text" id="updateUsername-NewUsername" name="updateUsername-NewUsername"></input><br/>
             </div>
             <div className="alignTop">
             <button className='button' onClick={ () => {
-                setUsername(document.getElementById("RA-username").value)
-                setNewUsername(document.getElementById("RA-password").value)
+                setNewUsername(document.getElementById("updateUsername-NewUsername").value)
                 setIsClicked(true)
                 }}>
                 Submit

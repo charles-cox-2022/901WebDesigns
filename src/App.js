@@ -6,7 +6,6 @@ import './resources/css/general.css';
 import './resources/css/nav.css'
 //Libraries
 import Rapi from './modules/Rapi/rapi';
-import { Link } from 'react-router-dom';
 //Components
 import Nav from './modules/Nav/nav';
 //Other
