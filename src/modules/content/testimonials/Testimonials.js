@@ -40,7 +40,7 @@ const Testimonials = () => {
                 } else {
                     return(
                         <div>
-                        <h3 className="padding25 center">Welcome, {profile.username}</h3>
+                        <h4 className="padding25 center">Welcome, {profile.username}</h4>
                         <ProfileDropDown/>
                     </div>
                     )

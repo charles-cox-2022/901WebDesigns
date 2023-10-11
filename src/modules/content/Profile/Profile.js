@@ -27,7 +27,7 @@ const Profile = () => {
                 )
             } else {
                 return(
-                <h3 className="margin15 center">Welcome, {profile.username}</h3> 
+                <h5 className="margin15 center">Welcome, {profile.username}</h5> 
                 )
             }
         

@@ -15,7 +15,7 @@ const RouteSwitch = () => {
         <BrowserRouter>
             <Provider store={store}>
                 <Routes>
-                    <Route path="/" element={<AboutUs store={store}/>}/>
+                    <Route path="/" element={<Profile store={store}/>}/>
                     <Route path="/Home" element={<AboutUs store={store}/>}/>
                     <Route path="/Portfolio" element={<Portfolio store={store}/>}/>
                     <Route path="/Contact" element={<ContactUs store={store}/>}/>
