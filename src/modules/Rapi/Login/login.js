@@ -30,8 +30,7 @@ const Login = (props) => {
        credentials: 'include',
        headers: {
            "Content-type": "application/json; charset=UTF-8"
-       },
-       depends: [isClicked]
+       }
    })
    //When button is clicked, change clicked to false (Ensure Trigger once per click)
    useEffect(()=>{
